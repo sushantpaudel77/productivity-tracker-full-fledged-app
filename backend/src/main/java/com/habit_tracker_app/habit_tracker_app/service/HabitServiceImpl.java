@@ -1,7 +1,7 @@
 package com.habit_tracker_app.habit_tracker_app.service;
 
 import com.habit_tracker_app.habit_tracker_app.entity.Habit;
-import com.habit_tracker_app.habit_tracker_app.entity.HabitEntity;
+import com.habit_tracker_app.habit_tracker_app.entity.HabitEntries;
 import com.habit_tracker_app.habit_tracker_app.repository.HabitRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -71,11 +71,11 @@ public class HabitServiceImpl implements HabitService {
                     habit.getEntries().removeIf(entry -> entry.getDate().equals(date));
 
                     // add new entry
-                    HabitEntity entry = new HabitEntity();
+                    HabitEntries entry = new HabitEntries();
                     entry.setDate(date);
                     entry.setCompleted(completed);
                     entry.setNotes(notes);
-                    entry.setTimestamp(LocalDateTime.now());
+                    entry.setTimestamp(LocalDateTime.now().toString());
 
                     habit.getEntries().add(entry);
                     habit.setUpdatedAt(LocalDateTime.now());
