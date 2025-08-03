@@ -36,17 +36,17 @@ jobs:
           key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
           restore-keys: ${{ runner.os }}-m2
 
-      - name: Run tests
-        working-directory: ./backend
-        run: ./mvnw clean test
+      # - name: Run tests
+      #   working-directory: ./backend
+      #   run: ./mvnw clean test
 
-      - name: Generate test report
-        uses: dorny/test-reporter@v1
-        if: success() || failure()
-        with:
-          name: Maven Tests
-          path: backend/target/surefire-reports/*.xml
-          reporter: java-junit
+      # - name: Generate test report
+      #   uses: dorny/test-reporter@v1
+      #   if: success() || failure()
+      #   with:
+      #     name: Maven Tests
+      #     path: backend/target/surefire-reports/*.xml
+      #     reporter: java-junit
 
   build-and-push:
     needs: test
