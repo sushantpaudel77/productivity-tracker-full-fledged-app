@@ -1,8 +1,9 @@
-package com.habit_tracker_app.habit_tracker_app.service;
+package com.habit_tracker_app.habit_tracker_app.service.impl;
 
 import com.habit_tracker_app.habit_tracker_app.entity.Habit;
 import com.habit_tracker_app.habit_tracker_app.entity.HabitEntries;
 import com.habit_tracker_app.habit_tracker_app.repository.HabitRepository;
+import com.habit_tracker_app.habit_tracker_app.service.HabitService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
